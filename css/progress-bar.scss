@@ -1,0 +1,61 @@
+@for $i from 0 through 100 {
+  .progress progress[value="#{$i}"]
+  {
+    & + .progress-value:before { content : '#{$i}%' }
+    & ~ .progress-bg .progress-bar { width: $i * 1% }
+  }
+}
+
+.progress
+{
+  font-family: Roboto, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 35px;
+  progress
+  {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: -777px;
+  }
+}
+
+.progress-value
+{
+  display: block;
+  line-height: 21px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.progress-bg
+{
+  background: #e6e9ed;
+  position: relative;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.progress-bar
+{
+  overflow: hidden;
+  background-color: #67b2d7;
+    border-radius: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+    width: 0;
+  -webkit-transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -ms-transition: width 1s linear;
+  transition: width 1s linear;    
+
+}
